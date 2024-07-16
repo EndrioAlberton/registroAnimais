@@ -11,9 +11,10 @@ public class DB {
     public static List<Genero> listGeneros = new ArrayList<Genero>();
     public static List<Especie> listEspecies = new ArrayList<Especie>();
     public static List<Exemplar> listExemplares = new ArrayList<Exemplar>();
+    public static List<Registro> listRegistros = new ArrayList<Registro>();
 
     public static void criarUsuarios() {
-        Usuario usuario = new Usuario("endrio", "endrio", "123");
+        Usuario usuario = new Usuario("endrio", "123", "Endrio Alberton");
         listUsuarios.add(usuario);
 
     }
@@ -80,11 +81,19 @@ public class DB {
     }
     
     public static void criarExemplares() {
-    	Exemplar exemplar1 =  new Exemplar("123", "Leo",  getEspecies().get(0));
+    	Exemplar exemplar1 =  new Exemplar("1", "Leo",  getEspecies().get(0));
     	listExemplares.add(exemplar1);
     }
 
     public static List<Exemplar> getExemplares() {
         return listExemplares;
+    }
+
+    public static void addRegistro(Registro registro) {
+        listRegistros.add(registro);
+    }
+
+    public static List<Registro> getRegistros() {
+        return listRegistros;
     }
 }
