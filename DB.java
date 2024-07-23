@@ -14,9 +14,10 @@ public class DB {
     public static List<Registro> listRegistros = new ArrayList<Registro>();
 
     public static void criarUsuarios() {
-        Usuario usuario = new Usuario("endrio", "123", "Endrio Alberton");
-        listUsuarios.add(usuario);
-
+        Usuario usuario1 = new Usuario("endrio", "123", "Endrio Alberton");
+        listUsuarios.add(usuario1);
+        Usuario usuario2 = new Usuario("admin", "123", "Administrador");
+        listUsuarios.add(usuario2);
     }
     
     public static List<Usuario> getUsuarios() {

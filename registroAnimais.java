@@ -48,6 +48,7 @@ public class registroAnimais {
             System.out.println("Selecione uma opção:");
             System.out.println("1 - Registrar avistamento de exemplar.");
             System.out.println("2 - Mostrar todos os registros do usuário.");
+            System.out.println("3 - Mostrar estados por família.");
             System.out.println("0 - Deslogar.");
             int option = scanner.nextInt();
             scanner.nextLine(); // Limpar o buffer
@@ -58,6 +59,9 @@ public class registroAnimais {
                     break;
                 case 2:
                     mostrarRegistros(currentUser);
+                    break;
+                case 3:
+                    mostrarEstadosPorFamilia(scanner);
                     break;
                 case 0:
                     loggedIn = false;
@@ -79,7 +83,6 @@ public class registroAnimais {
 
         Exemplar exemplar = null;
         for (Exemplar ex : DB.getExemplares()) {
-            System.out.println(ex.getId());
             if (ex.getId().equals(codigoExemplar)) {
                 exemplar = ex;
                 break;
@@ -138,6 +141,49 @@ public class registroAnimais {
                 System.out.println("Município: " + reg.getMunicipio().getNome());
                 System.out.println("------------------------------------");
             }
+        }
+    }
+
+    public static void mostrarEstadosPorFamilia(Scanner scanner) {
+        System.out.println("Mostrar estados que tiveram registro de espécies de uma determinada família.");
+
+        System.out.println("Insira o nome da família:");
+        String nomeFamilia = scanner.nextLine();
+
+        Familia familia = null;
+        for (Familia fam : DB.getFamilias()) {
+            if (fam.getNome().equalsIgnoreCase(nomeFamilia)) {
+                familia = fam;
+                break;
+            }
+        }
+
+        if (familia == null) {
+            System.out.println("Família não encontrada.");
+            return;
+        }
+
+        List<Registro> registros = DB.getRegistros();
+        List<Estado> estados = DB.getEstados();
+
+        boolean encontrado = false;
+        for (Estado estado : estados) {
+            boolean estadoRegistrado = false;
+            for (Registro registro : registros) {
+                if (registro.getExemplar().getEspecie().getGenero().getFamilia().equals(familia) &&
+                    registro.getMunicipio().getEstado().equals(estado)) {
+                    estadoRegistrado = true;
+                    encontrado = true;
+                    break;
+                }
+            }
+            if (estadoRegistrado) {
+                System.out.println("Estado: " + estado.getSigla());
+            }
+        }
+
+        if (!encontrado) {
+            System.out.println("Nenhum estado encontrado para a família especificada.");
         }
     }
 }

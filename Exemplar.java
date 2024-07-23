@@ -10,6 +10,10 @@ public class Exemplar {
     private List<Registro> registros;
 
     public Exemplar(String id, String descricao, Especie especie) {
+    	if (especie == null )
+    	{
+    		throw new IllegalArgumentException("Especie não pode ser nula");
+    	}
         this.id = id;
         this.descricao = descricao;
         this.especie = especie;

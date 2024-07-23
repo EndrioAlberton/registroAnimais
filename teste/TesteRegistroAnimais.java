@@ -83,7 +83,7 @@ public class TesteRegistroAnimais {
     public void testCriarRegistro() {
         Usuario usuario = new Usuario("endrio123", "senha123", "Endrio");
         Exemplar exemplar = new Exemplar("123", "Leão", null);
-        Municipio municipio = new Municipio("São Paulo", null);
+        Municipio municipio = new Municipio("Rio Grande Do Sul", null);
 
         Registro registro = usuario.criaRegistro(new Date(), exemplar, 200.0f, 2.5f, "Avistado na selva", municipio);
 

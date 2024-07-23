@@ -6,6 +6,10 @@ public class Genero {
     private Familia familia;
 
     public Genero(String nome, String descricao, Familia familia) {
+    	if (familia == null )
+    	{
+    		throw new IllegalArgumentException("Familia não pode ser nula");
+    	}
         this.nome = nome;
         this.descricao = descricao;
         this.familia = familia;

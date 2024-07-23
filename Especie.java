@@ -10,6 +10,10 @@ public class Especie {
     private List<Exemplar> exemplares;
 
     public Especie(String nome, String descricao, Genero genero) {
+    	if (genero == null )
+    	{
+    		throw new IllegalArgumentException("Genero não pode ser nula");
+    	}
         this.nome = nome;
         this.descricao = descricao;
         this.genero = genero;
