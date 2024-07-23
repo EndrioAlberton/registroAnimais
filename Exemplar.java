@@ -17,6 +17,9 @@ public class Exemplar {
         this.id = id;
         this.descricao = descricao;
         this.especie = especie;
+        if (especie != null){
+        	especie.addExemplar(this);
+        }
         this.registros = new ArrayList<>();
     }
 

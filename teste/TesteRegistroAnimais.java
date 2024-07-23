@@ -3,6 +3,7 @@ package registroAnimais.teste;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import registroAnimais.*;
 
@@ -82,7 +83,10 @@ public class TesteRegistroAnimais {
     @Test
     public void testCriarRegistro() {
         Usuario usuario = new Usuario("endrio123", "senha123", "Endrio");
-        Exemplar exemplar = new Exemplar("123", "Leão", null);
+        Familia familia = new Familia("Felidae", "Descrição da família Felidae");
+        Genero genero = new Genero("Panthera", "Descrição do gênero Panthera", familia);
+        Especie especie = new Especie("Leo", "Descrição da espécie Leo", genero);
+        Exemplar exemplar = new Exemplar("123", "Leão", especie);
         Municipio municipio = new Municipio("Rio Grande Do Sul", null);
 
         Registro registro = usuario.criaRegistro(new Date(), exemplar, 200.0f, 2.5f, "Avistado na selva", municipio);
@@ -95,4 +99,14 @@ public class TesteRegistroAnimais {
         assertEquals("Avistado na selva", registro.getDescricao());
         assertEquals(municipio, registro.getMunicipio());
     }
+    
+    @Test
+    public void testAssociacaoExemplarEspecie() {
+        Familia familia = new Familia("Felidae", "Descrição da família Felidae");
+        Genero genero = new Genero("Panthera", "Descrição do gênero Panthera", familia);
+        Especie especie = new Especie("Leo", "Descrição da espécie Leo", genero);
+        Exemplar exemplar = new Exemplar("123", "Leo", especie);
+        assertTrue(especie.listExemplar().contains(exemplar));
+        assertEquals(especie, exemplar.getEspecie());
+    } 
 }

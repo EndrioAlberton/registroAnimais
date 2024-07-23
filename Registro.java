@@ -12,11 +12,6 @@ public class Registro {
     private Municipio municipio;
 
     public Registro(Usuario usuario, Date dataHora, Exemplar exemplar, float peso, float comprimento, String descricao, Municipio municipio) {
-    	if (usuario == null || usuario == null || municipio == null)
-    	{
-    		throw new IllegalArgumentException("Usuario, Exemplar Municipio e/ou não podem ser nulas");
-    	}
-    	
         this.usuario = usuario;
         this.dataHora = dataHora;
         this.exemplar = exemplar;
