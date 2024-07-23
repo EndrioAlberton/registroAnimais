@@ -22,7 +22,7 @@ public class Especie {
 
     public String getNome() {
         return nome;
-    }
+    }	
 
     public String getDescricao() {
         return descricao;
@@ -37,10 +37,6 @@ public class Especie {
     }
 
     public void addExemplar(Exemplar e) {
-    	if (e != null && e.getEspecie()== null)
-    	{
-    		e.setEspecie(this);
-    	}
         exemplares.add(e);
     }
 }
