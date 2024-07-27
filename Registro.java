@@ -15,6 +15,9 @@ public class Registro {
         this.usuario = usuario;
         this.dataHora = dataHora;
         this.exemplar = exemplar;
+        if (exemplar != null) {
+            exemplar.addRegistro(this);
+        }
         this.peso = peso;
         this.comprimento = comprimento;
         this.descricao = descricao;
