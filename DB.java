@@ -15,6 +15,7 @@ public class DB {
     public static List<Registro> listRegistros = new ArrayList<Registro>();
 
     public static void criarUsuarios() {
+    	//add 2 usuarios(banco tem mais registros)
         Usuario usuario1 = new Usuario("banco", "123b", "Banco");
         listUsuarios.add(usuario1);
         Usuario usuario2 = new Usuario("admin", "123a", "Administrador");
@@ -26,6 +27,7 @@ public class DB {
     }
 
     public static void criarEstados() {
+    	//add 3 estados
         Estado estado1 = new Estado("RS");
         listEstados.add(estado1);
         Estado estado2 = new Estado("SC");
@@ -39,6 +41,7 @@ public class DB {
     }
     
     public static void criarMunicipios() {
+    	//add 4 municipios(2 rs, 1 sc, 1 pr)
         Municipio municipio1 = new Municipio("Gravataí", getEstados().get(0));
         listMunicipios.add(municipio1);
         Municipio municipio2 = new Municipio("Florianópolis", getEstados().get(1));
@@ -55,9 +58,9 @@ public class DB {
     
     public static void criarFamilias() {
     	//add 2 familias
-        Familia familia1 = new Familia("Felidae", "Descrição da família Felidae");
+        Familia familia1 = new Familia("Felidae", "Família de felinos, como leões, tigres e gatos.");
         listFamilias.add(familia1);
-        Familia familia2 = new Familia("Canidae", "Descrição da família Canidae");
+        Familia familia2 = new Familia("Canidae", "Família de canídeos, como cães, lobos e raposas.");
         listFamilias.add(familia2); 
     }
 
@@ -67,11 +70,11 @@ public class DB {
     
     public static void criarGeneros() {
     	//add 3 generos(2 felidade e 1 canidae)
-        Genero genero1 = new Genero("Panthera", "Descrição do gênero Panthera", getFamilias().get(0)); // panthera -> felidae
+        Genero genero1 = new Genero("Panthera", "Gênero que inclui leões, tigres, leopardos e onças.", getFamilias().get(0)); // panthera -> felidae
         listGeneros.add(genero1);
-        Genero genero2 = new Genero("Lynx", "Descrição do gênero Lynx", getFamilias().get(0)); // lynx -> felidae
+        Genero genero2 = new Genero("Lynx", "Gênero que inclui linces.", getFamilias().get(0)); // lynx -> felidae
         listGeneros.add(genero2);
-        Genero genero3 = new Genero("Canis", "Descrição do gênero Canis", getFamilias().get(1)); // canis -> canidae
+        Genero genero3 = new Genero("Canis", " Gênero que inclui cães e lobos.", getFamilias().get(1)); // canis -> canidae
         listGeneros.add(genero3);
     }
 
