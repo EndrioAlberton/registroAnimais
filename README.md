@@ -89,3 +89,136 @@
     <li>Garanta que todos os relacionamentos e navegabilidades estejam corretamente implementados conforme o diagrama de classes.</li>
 </ol>
 
+<h3> Documento Explicativo da Base de Dados de Registro de Animais </h3>
+
+#### Visão Geral
+Esta base de dados é projetada para gerenciar o registro de animais, incluindo informações sobre usuários, estados, municípios, famílias, gêneros, espécies, exemplares e registros de avistamentos.
+
+#### Estrutura da Base de Dados
+
+##### 1. Cadastro de Usuários
+Os usuários são responsáveis pelo registro e gestão dos dados no sistema. Abaixo estão os usuários cadastrados:
+
+- **Usuário 1**:
+  - Login: banco
+  - Senha: 123b
+  - Nome: Banco
+
+- **Usuário 2**:
+  - Login: admin
+  - Senha: 123a
+  - Nome: Administrador
+
+##### 2. Cadastro de Estados
+Os estados representam as unidades federativas onde os municípios e registros estão localizados. Abaixo estão os estados cadastrados:
+
+- **Estado 1**: Rio Grande do Sul (RS)
+- **Estado 2**: Santa Catarina (SC)
+- **Estado 3**: Paraná (PR)
+
+##### 3. Cadastro de Municípios
+Os municípios são as localidades específicas dentro dos estados onde os registros de animais são feitos. Abaixo estão os municípios cadastrados:
+
+- **Município 1**: Gravataí (RS)
+- **Município 2**: Florianópolis (SC)
+- **Município 3**: Porto Alegre (RS)
+- **Município 4**: Curitiba (PR)
+
+##### 4. Cadastro de Famílias
+As famílias representam grupos de gêneros de animais. Abaixo estão as famílias cadastradas:
+
+- **Família 1**: Felidae
+  - Descrição: Família de felinos, como leões, tigres e gatos.
+  
+- **Família 2**: Canidae
+  - Descrição: Família de canídeos, como cães, lobos e raposas.
+
+##### 5. Cadastro de Gêneros
+Os gêneros representam subgrupos dentro das famílias. Abaixo estão os gêneros cadastrados:
+
+- **Gênero 1**: Panthera
+  - Descrição: Gênero que inclui leões, tigres, leopardos e onças.
+  - Família: Felidae
+
+- **Gênero 2**: Lynx
+  - Descrição: Gênero que inclui linces.
+  - Família: Felidae
+
+- **Gênero 3**: Canis
+  - Descrição: Gênero que inclui cães e lobos.
+  - Família: Canidae
+
+##### 6. Cadastro de Espécies
+As espécies são subgrupos dentro dos gêneros. Abaixo estão as espécies cadastradas:
+
+- **Espécie 1**: Panthera leo (Leão)
+  - Descrição: Leão.
+  - Gênero: Panthera
+
+- **Espécie 2**: Lynx pardinus (Lince-ibérico)
+  - Descrição: Lince-ibérico.
+  - Gênero: Lynx
+
+- **Espécie 3**: Canis lupus (Lobo)
+  - Descrição: Lobo.
+  - Gênero: Canis
+
+##### 7. Cadastro de Exemplares
+Os exemplares representam animais específicos dentro das espécies. Abaixo estão os exemplares cadastrados:
+
+- **Exemplar 1**: 
+  - Identificação: 1
+  - Nome: Leo
+  - Espécie: Panthera leo (Leão)
+
+- **Exemplar 2**: 
+  - Identificação: 2
+  - Nome: Lince
+  - Espécie: Lynx pardinus (Lince-ibérico)
+
+- **Exemplar 3**: 
+  - Identificação: 3
+  - Nome: Canis lupus
+  - Espécie: Canis lupus (Lobo)
+
+##### 8. Cadastro de Registros
+Os registros documentam avistamentos de exemplares em diferentes municípios e são realizados por diferentes usuários. Abaixo estão os registros cadastrados:
+
+- **Registro 1**: 
+  - Usuário: Banco
+  - Data: [Data do registro]
+  - Exemplar: Leo (Leão)
+  - Peso: 190.2 kg
+  - Altura: 1.70 m
+  - Observação: Avistamento inicial de Leo
+  - Município: Gravataí (RS)
+
+- **Registro 2**: 
+  - Usuário: Banco
+  - Data: [Data do registro]
+  - Exemplar: Leo (Leão)
+  - Peso: 187.5 kg
+  - Altura: 1.75 m
+  - Observação: Segundo avistamento de Leo
+  - Município: Gravataí (RS)
+
+- **Registro 3**: 
+  - Usuário: Banco
+  - Data: [Data do registro]
+  - Exemplar: Lince (Lince-ibérico)
+  - Peso: 25.3 kg
+  - Altura: 0.97 m
+  - Observação: Primeiro avistamento de Lince
+  - Município: Florianópolis (SC)
+
+- **Registro 4**: 
+  - Usuário: Administrador
+  - Data: [Data do registro]
+  - Exemplar: Canis lupus (Lobo)
+  - Peso: 30.5 kg
+  - Altura: 0.80 m
+  - Observação: Primeiro avistamento de Canis lupus
+  - Município: Curitiba (PR)
+
+#### Conclusão
+Este documento descreve a base de dados de registro de animais, incluindo detalhes sobre usuários, estados, municípios, famílias, gêneros, espécies, exemplares e registros de avistamentos. Cada entidade é cuidadosamente registrada para assegurar a correta gestão e acompanhamento dos dados dos animais.

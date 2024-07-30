@@ -101,7 +101,7 @@ public class TesteRegistroAnimais {
     }
     
     @Test
-    public void testAssociacaoExemplarEspecie() {
+    public void testExemplarEspecie() {
         Familia familia = new Familia("Felidae", "Descrição da família Felidae");
         Genero genero = new Genero("Panthera", "Descrição do gênero Panthera", familia);
         Especie especie = new Especie("Leo", "Descrição da espécie Leo", genero);
@@ -111,7 +111,7 @@ public class TesteRegistroAnimais {
     } 
 
     @Test
-    public void testAssociacaoExemplarRegistro() {
+    public void testExemplarRegistro() {
         Usuario usuario = new Usuario("endrio123", "senha123", "Endrio");
         Estado estado = new Estado("RS");
         Municipio municipio = new Municipio("Rio Grande Do Sul", estado);
@@ -123,9 +123,7 @@ public class TesteRegistroAnimais {
 
         Registro registro = new Registro(usuario, new Date(), exemplar, 200.0f, 2.5f, "Avistado na selva", municipio);
 
-        // Verificar se o exemplar está na lista de registros do exemplar
         assertTrue(exemplar.listRegistro().contains(registro));
-        // Verificar se o exemplar associado ao registro é o mesmo que o exemplar criado
         assertEquals(exemplar, registro.getExemplar());
     }
 }
