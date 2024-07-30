@@ -14,6 +14,7 @@ public class registroAnimais {
         DB.criarGeneros();
         DB.criarEspecies();
         DB.criarExemplares();
+        DB.criarRegistro();
 
         List<Usuario> usuarios = DB.getUsuarios();
         Scanner scanner = new Scanner(System.in);
@@ -96,11 +97,11 @@ public class registroAnimais {
 
         System.out.println("Insira o peso do exemplar:");
         float peso = scanner.nextFloat();
-        scanner.nextLine(); // Limpar o buffer
+        scanner.nextLine();
 
         System.out.println("Insira o comprimento do exemplar:");
         float comprimento = scanner.nextFloat();
-        scanner.nextLine(); // Limpar o buffer
+        scanner.nextLine();
 
         System.out.println("Insira a descrição do avistamento:");
         String descricao = scanner.nextLine();
@@ -166,6 +167,7 @@ public class registroAnimais {
         List<Registro> registros = DB.getRegistros();
         List<Estado> estados = DB.getEstados();
 
+        System.out.println("Estado(s): ");
         boolean encontrado = false;
         for (Estado estado : estados) {
             boolean estadoRegistrado = false;
@@ -178,7 +180,7 @@ public class registroAnimais {
                 }
             }
             if (estadoRegistrado) {
-                System.out.println("Estado: " + estado.getSigla());
+                System.out.println(estado.getSigla());
             }
         }
 
